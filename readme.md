@@ -18,3 +18,25 @@ code project-name
 ; project-name.code-workspace
 ; を作成して、pythonPathを Scripts/python に設定する
 ````
+
+## このプロジェクトをクローンする
+このプロジェクトにはサブディレクトリそれぞれにpythonプロジェクトが格納されており、  
+そのそれぞれが`python -m venv`によって作成されています。  
+これをクローン側でセットアップする方法について。  
+例として`httpTest`をセットアップする。
+
+````
+hub clone desktopgame/python-study
+cd httpTest
+python -m venv .
+; Windowsなら
+; Scripts¥activate
+; Macなら
+; . bin/activate
+pip install -r requirements.txt
+
+; Windowsなら
+; Scripts¥deactivate
+; Macなら
+; . bin/deactivate
+````
