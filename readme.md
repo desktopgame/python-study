@@ -1,4 +1,4 @@
-# pyton-study
+# python-study
 python勉強用
 ````
 C:\Work\python-study>python --version
