@@ -13,4 +13,4 @@ pip-selfcheck.json
 
 # for vscode
 .vscode
-*.code-workspace
+.code-workspace
