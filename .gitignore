@@ -14,3 +14,5 @@ pip-selfcheck.json
 # for vscode
 .vscode
 *.code-workspace
+# for cache
+__pycache__
