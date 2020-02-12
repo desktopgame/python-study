@@ -1,7 +1,8 @@
 class SceneManager:
-    def __init__(self):
+    def __init__(self, surface):
         self.__map = {}
         self.__current = ''
+        self.__surface = surface
 
     def add(self, name, scene):
         self.__map[name] = scene
@@ -19,4 +20,8 @@ class SceneManager:
             self.__map[self.__current].show()
 
     def draw(self):
-        self.__map[self.__current].draw()
+        self.__map[self.__current].draw(self.surface)
+    
+    @property
+    def surface(self):
+        return self.__surface

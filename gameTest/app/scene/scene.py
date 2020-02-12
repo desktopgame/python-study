@@ -17,7 +17,7 @@ class Scene:
         pass
 
     @abstractmethod
-    def draw(self):
+    def draw(self, surface):
         pass
 
     @property

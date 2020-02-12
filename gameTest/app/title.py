@@ -1,4 +1,6 @@
 import scene
+import pygame
+from pygame.draw import draw as pydraw
 
 
 class TitleScene(scene.Scene):
@@ -10,10 +12,11 @@ class TitleScene(scene.Scene):
         print('hide')
 
     def update(self):
-        print('update')
+        pass
 
-    def draw(self):
-        print('draw')
+    def draw(self, surface: pygame.Surface):
+        pydraw.rect(surface, (78, 203, 245), (0, 0, 250, 500), 5)
+        surface.fill((0, 255, 0))
 
     @property
     def is_finished(self):

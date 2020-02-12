@@ -2,12 +2,12 @@ import pygame
 import sys
 import scene
 
-from title import *
+from title import TitleScene
 
 pygame.init()
-SURFACE = pygame.display.set_mode((1280, 720))
+surface = pygame.display.set_mode((1280, 720))
 
-mgr = scene.SceneManager()
+mgr = scene.SceneManager(surface)
 mgr.add('title', TitleScene())
 mgr.bind('title')
 
