@@ -17,10 +17,8 @@ class App:
 
     def draw(self):
         pyxel.cls(0)
-        for i in range(self.stage.row_count):
-            for j in range(self.stage.column_count):
-                self.stage[i][j].update()
-                self.stage[i][j].draw()
+        self.stage.update()
+        self.stage.draw()
 
 
 App()

@@ -9,7 +9,17 @@ class Grid:
         self.__grid = [
             [Slot(Point(j, i)) for j in range(column_count)] for i in range(row_count)
         ]
-    
+
+    def update(self):
+        for i in range(self.stage.row_count):
+            for j in range(self.stage.column_count):
+                self.stage[i][j].update()
+
+    def draw(self):
+        for i in range(self.stage.row_count):
+            for j in range(self.stage.column_count):
+                self.stage[i][j].draw()
+        
     @property
     def column_count(self):
         return self.__column_count
