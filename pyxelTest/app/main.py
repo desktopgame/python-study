@@ -13,8 +13,13 @@ class App:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.text(55, 41, "Hello, Pyxel!", pyxel.frame_count % 16)
-        pyxel.blt(61, 66, 0, 0, 0, 38, 16)
+        cell_size = 20
+        for col in range(16):
+            pyxel.rect(
+                int(col % 10) * cell_size,
+                int(col / 10) * cell_size,
+                cell_size, cell_size, col
+            )
 
 
 App()
