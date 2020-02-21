@@ -18,5 +18,9 @@ class Grid:
     def row_count(self):
         return self.__row_count
 
-    def __getitem__(self, row_count):
-        return self.__grid[row_count]
+    def set_cell(self, row, col, slot):
+        self.__grid[row][col] = slot
+        slot.point = Point(col, row)
+    
+    def get_cell(self, row, col):
+        return self.__grid[row][col]

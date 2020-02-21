@@ -11,3 +11,7 @@ class Slot:
     @property
     def point(self):
         return self.__point
+
+    @property.setter
+    def point(self, point):
+        self.__point = point
