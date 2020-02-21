@@ -3,7 +3,10 @@ from .point import Point
 
 
 class Grid:
-    def __init__(self, row_count, column_count):
+    __row_count: int
+    __columnCount: int
+
+    def __init__(self, row_count: int, column_count: int):
         self.__column_count = column_count
         self.__row_count = row_count
         self.__grid = [
@@ -11,14 +14,16 @@ class Grid:
         ]
 
     def update(self):
-        for i in range(self.stage.row_count):
-            for j in range(self.stage.column_count):
-                self.stage[i][j].update()
+        for i in range(self.row_count):
+            for j in range(self.column_count):
+                self.__grid[i][j].update()
 
-    def draw(self):
-        for i in range(self.stage.row_count):
-            for j in range(self.stage.column_count):
-                self.stage[i][j].draw()
+    def draw(self, screen_width: int, screen_height: int):
+        cell_width: int = int(screen_width / self.column_count)
+        cell_height: int = int(screen_height / self.row_count)
+        for i in range(self.row_count):
+            for j in range(self.column_count):
+                self.__grid[i][j].draw(j * cell_width, i * cell_height, cell_width, cell_height)
         
     @property
     def column_count(self):
