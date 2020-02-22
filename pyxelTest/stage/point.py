@@ -10,3 +10,11 @@ class Point:
     @property
     def y(self):
         return self.__y
+
+    @x.setter
+    def x(self, x):
+        self.__x = x
+
+    @y.setter
+    def y(self, y):
+        self.__y = y
